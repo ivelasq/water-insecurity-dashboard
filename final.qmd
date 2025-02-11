@@ -30,6 +30,7 @@ wi_west_2023_gt
 ```
 
 ```{python}
+#| warning: false
 state_order = (
     wi_west_2023.groupby("state")["percent_lacking_plumbing"]
     .mean()
