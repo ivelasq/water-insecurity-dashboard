@@ -1,0 +1,56 @@
+---
+title: 'Water Insecurity in U.S. Western States, 2023'
+format:
+  dashboard:
+    theme: sandstone
+---
+
+```{python}
+#| include: false
+%run script.py
+```
+
+## Row
+
+An overview of water insecurity across the 22 western states of the contiguous United States.
+
+## Row
+
+```{python}
+wi_west_2023_tab = wi_west_2023[['name', 'percent_lacking_plumbing']].sort_values('percent_lacking_plumbing', ascending=False).head(8)
+
+wi_west_2023_gt = (
+    GT(wi_west_2023_tab)
+    .tab_header(title='Counties most facing water insecurity')
+    .cols_label(name='County', percent_lacking_plumbing='Percent lacking plumbing')
+    .fmt_number(columns='percent_lacking_plumbing', decimals=2)
+)
+
+wi_west_2023_gt
+```
+
+```{python}
+state_order = (
+    wi_west_2023.groupby("state")["percent_lacking_plumbing"]
+    .mean()
+    .sort_values(ascending=False)
+    .index
+)
+
+wi_west_2023["state"] = pd.Categorical(wi_west_2023["state"], categories=state_order, ordered=True)
+
+state_means = wi_west_2023.groupby("state")["percent_lacking_plumbing"].mean()
+wi_west_2023["state_avg"] = wi_west_2023["state"].map(state_means)
+
+boxplot = (
+    ggplot(wi_west_2023, aes(x="state", y="percent_lacking_plumbing", fill="state_avg"))
+    + geom_boxplot()
+    + scale_fill_gradient(low="#FEE68E", high="#c64501", name="Avg % Lacking Plumbing")
+    + theme_minimal()
+    + theme(axis_text_x=element_text(rotation=90),
+            panel_background=element_rect(fill='white'),
+            legend_position = 'none')
+)
+
+boxplot
+```
