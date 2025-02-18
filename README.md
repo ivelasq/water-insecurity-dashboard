@@ -12,11 +12,5 @@ Watch a video on how to create a Quarto dashboard on [YouTube](https://www.youtu
   * To use GitHub Codespaces, use @mcanouil's template: https://github.com/mcanouil/quarto-codespaces
 * Clone the repository: `git clone https://github.com/ivelasq/water-insecurity-dashboard.git`
 * Navigate to the directory: `cd water-insecurity-dashboard`
-* Create and activate a virtual environment:
-
-```
-python3 -m venv env
-source env/bin/activate
-```
-
-* Install project dependencies: `pip install -r requirements.txt`
+* Create and activate a virtual environment.
+* Install project dependencies.
