@@ -9,6 +9,7 @@ Watch a video on how to create a Quarto dashboard on [YouTube](https://www.youtu
 ## Setup
 
 * Install Quarto (included in Positron): https://quarto.org/docs/get-started/
+  * To use GitHub Codespaces, use @mcanouil's template: https://github.com/mcanouil/quarto-codespaces
 * Clone the repository: `git clone https://github.com/ivelasq/water-insecurity-dashboard.git`
 * Navigate to the directory: `cd water-insecurity-dashboard`
 * Create and activate a virtual environment:
