@@ -6,3 +6,16 @@ Watch a video on how to create a Quarto dashboard on [YouTube](https://www.youtu
 
 <img width="1840" alt="image" src="https://github.com/user-attachments/assets/c8504cd1-004f-4efd-b61a-b111b9eee9b2" />
 
+## Setup
+
+* Install the Quarto extension. (Included in Positron)
+* Clone the repository: `git clone https://github.com/ivelasq/water-insecurity-dashboard.git`
+* Navigate to the directory: `cd water-insecurity-dashboard`
+* Create and activate a virtual environment:
+
+```
+python3 -m venv env
+source env/bin/activate
+```
+
+* Install project dependencies: `pip install -r requirements.txt`
