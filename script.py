@@ -1,6 +1,5 @@
 # Import packages
 import requests
-from PyDyTuesday import get_date
 import pandas as pd
 import plotnine as p9
 from plotnine import ggplot, geom_boxplot, theme_minimal, geom_map, aes, theme, scale_fill_gradient, theme_void, element_text, element_rect
